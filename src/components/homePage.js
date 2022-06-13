@@ -1,6 +1,7 @@
-import { CategoryGrid, ProductGrid } from "./common/grid.js";
+import { ProductGrid } from "./common/grid.js";
 import { Slider } from "./common/slider/slider.js";
 import styled from "styled-components"
+import { Category } from "./common/categorypics.js";
 
 const HomeStyled = styled.div`
     .homeBtn {
@@ -19,13 +20,19 @@ const HomeStyled = styled.div`
         }
     }
     `
+    const CategoryGrid = styled.div`
+    display: flex;
+    justify-content: center;
+`
     
 export const HomePage = ({setActiveState}) => {
     return (
         <HomeStyled>
             <Slider />
             <p className="sectionTitle">Categories</p>
-            <CategoryGrid categoryCall='Home'/>
+            <CategoryGrid>
+                <Category />
+            </CategoryGrid>
             <p className="sectionTitle">Featured Products</p>
             <ProductGrid/>
             <button className="homeBtn" 
